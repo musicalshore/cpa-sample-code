@@ -1,0 +1,54 @@
+
+.container {
+  height: 447px;
+  overflow-y: scroll;
+  border-left: 1px solid #f0f0f0;
+
+  .ranking {
+    fill: #fff;
+    font-size: 12px;
+  }
+
+  li {
+    display: flex;
+    // align-items: baseline;
+    font-size: 15px;
+    font-weight: 400;
+    height: 40px;
+    // line-height: 30px;
+    list-style-type: none;
+    // padding: 5px 15px 5px 30px;
+
+    &:hover {
+      background: #F6F6F6;
+      cursor: pointer;
+    }
+    .cityState {
+      color: #333;
+      padding-top: 3px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    svg {
+
+      // background-color: transparent;
+      // background-image: url('./marker.png');
+      // background-repeat: no-repeat;
+      // background-size: contain;
+      color: #fff;
+      content: '';
+      // float: left;
+      font-size: 10px;
+      height: 33px;
+      // margin-right: 10px;
+      text-align: center;
+      width: 23px;
+      margin-right: 3px;
+      .text {
+        // display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+

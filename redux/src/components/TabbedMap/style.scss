@@ -1,0 +1,491 @@
+.container {
+  // border: solid 1px #ebebeb;
+
+  // max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .map-container {
+    min-height: 740px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+  }
+  .top-listings {
+    width: 25%;
+  }
+
+  .maps {
+    width: 75%;
+
+    .timeLine-SocialContainer {
+      display: flex;
+      margin: 0 auto;
+      padding-top: 10px;
+      width: 100%;
+
+      .legendContainer {
+        border: 1px solid #ebebeb;
+        display: inline-block;
+        // float: left;
+        height: 34px;
+        padding: 0 20px;
+
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+
+          li {
+            display: inline;
+            font-family: 'Arial', sans-serif;
+            font-size: 15px;
+            line-height: 34px;
+            margin: 0;
+            padding: 0 40px 0 0;
+
+            &:last-child {
+              padding: 0;
+            }
+
+            span {
+              display: inline-block;
+              font-size: 26px;
+              height: 34px;
+              margin: 0;
+              padding: 0 2px 0 0;
+              vertical-align: middle;
+            }
+
+            .blue {
+              color: #0096d6;
+            }
+
+            .yellow {
+              color: #f3c303;
+            }
+
+            .green {
+              color: #6db33f;
+            }
+          }
+        }
+      }
+
+      .socialContainer {
+        float: right;
+        padding-top: 14px;
+      }
+    }
+  }
+}
+
+:global .ReactModalPortal {
+  height: 100%;
+  .modal-overlay {
+    background-color: rgba(128, 128, 128, 0.5);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+  .modal-content {
+    background-color: #fff;
+    left: 50%;
+    // left: 448px;
+    position: absolute;
+    top: 50%;
+    // top: 563px;
+    transform: translate(-50%, -50%);
+    width: 452px;
+    height: 467px;
+    z-index: 999;
+    border: 1px #e8e8e8;
+    border-radius: 5px;
+    // padding-left: 26px;
+  }
+  .city-modal-container {
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    // border: 1px #e8e8e8;
+    // border-radius: 5px;
+    &.top-city {
+      // border: 5px solid #0096d6;
+    }
+    &.density {
+      // border: 5px solid #e6527a;
+    }
+    &.rain-snow {
+      // border: 5px solid #6d5dc9;
+    }
+  }
+  .city-modal-heading-container {
+    // display: flex;
+    // flex-direction: column;
+    padding-bottom: 19px;
+    .city-name,
+    .city-rank {
+      margin-left: 73px;
+    }
+    .city-name {
+      color: #4d4d4d;
+      font-family: 'Arial', sans-serif;
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 0;
+      margin-top: 26px;
+      font-weight: normal;
+    }
+
+   .city-rank {
+      color: #4d4d4d;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: bold;
+      margin-top: 10px;
+      padding-top: 0;
+
+      span {
+        color: #333333;
+        font-weight: 700;
+        font-variant-numeric: ordinal;
+        &.density-line,
+        &.rain-snow-line {
+          font-weight: 100;
+        }
+      }
+    }
+    .close {
+      background-image: url('./modal_close.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+      height: 12px;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      width: 12px;
+    }
+  }
+
+  .rankings-container {
+    border-top: 1px solid #e8e8e8;
+    padding-bottom: 20px;
+    h5 {
+      font-size: 14px;
+      margin: 0;
+      margin-top: 23px;
+    }
+    & > h5,
+    & > div {
+      margin-left: 96px;
+    }
+
+    & > div {
+      line-height: 32px;
+      font-size: 18px;
+    }
+    & > div > span:first-child {
+      display: inline-block;
+      width: 213px;
+      // margin-left: 82px;
+    }
+
+    & > div > span:nth-child(2) {
+      display: inline-block;
+      margin-left: 16px;
+    }
+    .overall-ranking {
+      color: #0096d6;
+    }
+    .population-ranking {
+      color: #dd2153;
+    }
+    .rain-snow-ranking {
+      color: #6d5dc9;
+    }
+    .last-years-ranking {
+      color: #757575;
+    }
+  }
+  .additional-data {
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    color: #4d4d4d;
+    font-size: 14px;
+
+    h5 {
+      font-size: 14px;
+      margin: 0;
+    }
+    .city-data-container,
+    .suburban-data-container {
+      padding-top: 19px;
+      height: 100%;
+      line-height: 18px;
+
+      & > div:nth-of-type(2) {
+        margin-top: 16px;
+      }
+      & > div:nth-of-type(3) {
+        margin-top: 15px;
+      }
+    }
+    .city-data-container {
+      width: 221px;
+      border-right: 1px solid #e8e8e8;
+      margin-left: 26px;
+
+      & > h5,
+      & > div {
+        width: 163px;
+        margin-right: 34px;
+      }
+    }
+    .suburban-data-container {
+      width: 227px;
+      margin-left: 23px;
+      & > h5,
+      & > div {
+        margin-right: 29px;
+      }
+    }
+  }
+
+  .footnotes-container {
+    height: 54px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    color: #4d4d4d;
+    line-height: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    & > div {
+      margin-left: 26px;
+    }
+  }
+
+  // .city-container {
+  //   padding: 18px 15px;
+
+
+
+
+  //     }
+
+  //     .badge {
+  //       padding: 0 5px 18px 15px;
+  //       position: relative;
+
+  //       // @include clearfix;
+
+  //       img {
+  //         float: left;
+  //         margin-right: 10px;
+  //       }
+
+  //       p {
+  //         // position: absolute
+  //         // top: 14px
+  //         // left: 80px
+  //         float: left;
+  //         font-family: 'Arial', sans-serif;
+  //         font-size: 14px;
+  //         margin: 0;
+  //         padding: 14px 0 0 0;
+  //         text-align: left;
+  //         width: 70%;
+
+  //         strong {
+  //           display: block;
+  //         }
+  //       }
+
+  //       &.newAddition {
+  //         p {
+  //           padding-top: 0;
+  //         }
+  //       }
+
+  //       &.mostImproved {
+  //         p {
+  //           padding-top: 7px;
+  //         }
+  //       }
+  //     }
+
+  //     .rankings {
+  //       border-bottom: solid 1px #ececec;
+  //       border-top: solid 1px #ececec;
+  //       padding: 18px 15px;
+
+  //       &.noTop {
+  //         border: 0;
+  //         padding-bottom: 0;
+  //       }
+
+  //       .modalHeader {
+  //         color: #535353;
+  //         font-family: 'Arial', sans-serif;
+  //         font-size: 14px;
+  //         font-weight: 600;
+  //         margin-bottom: 10px;
+  //       }
+
+  //       .section {
+  //         color: #929292;
+  //         font-family: 'Arial', sans-serif;
+  //         font-size: 14px;
+  //         font-weight: 400;
+  //         height: 20px;
+  //         line-height: 20px;
+
+  //         &.brakingEvent {
+  //           height: 40px;
+  //           padding-bottom: 10px;
+
+  //           span {
+  //             color: #333;
+  //             font-weight: 600;
+  //           }
+
+  //           h2 {
+  //             line-height: 1.5;
+  //             position: relative;
+
+  //             a.drivewise-information-popup-close {
+  //               background: transparent;
+  //               background: #fffcce;
+  //               border: 1px solid #f5f096;
+  //               border: 0;
+  //               border-bottom: 0;
+  //               bottom: 138px;
+  //               color: #333;
+  //               display: none;
+  //               font-size: 11px;
+  //               font-weight: 700;
+  //               left: 79px;
+  //               line-height: 24px;
+  //               padding: 0 6px;
+  //               position: relative;
+  //               text-decoration: none;
+  //               width: 80px;
+  //               z-index: 100;
+  //             }
+
+  //             a.drivewise-information {
+  //               background: url('./icon-information.png') no-repeat center center;
+  //               display: inline-block;
+  //               height: 12px;
+  //               position: relative;
+  //               width: 12px;
+
+  //               .drivewise-information-popup {
+  //                 background: #00467f;
+  //                 bottom: -61px;
+  //                 display: none;
+  //                 height: 106px;
+  //                 left: 28px;
+  //                 padding: 14px;
+  //                 position: absolute;
+  //                 width: 260px;
+  //                 z-index: 100;
+
+  //                 p {
+  //                   color: #ffffff;
+  //                   font-size: 11px;
+  //                   line-height: 18px;
+  //                   margin: 0;
+  //                   padding: 0;
+  //                 }
+
+  //                 img {
+  //                   bottom: 53px;
+  //                   left: -14px;
+  //                   position: absolute;
+  //                 }
+  //               }
+
+  //               &:hover,
+  //               &.hover {
+  //                 .drivewise-information-popup {
+  //                   display: block;
+  //                 }
+  //               }
+  //             }
+  //           }
+  //         }
+
+  //         h2 {
+  //           color: #929292;
+  //           float: left;
+  //           font-size: 13px;
+  //           margin-bottom: 0;
+  //           margin-top: 0;
+  //           width: 70%;
+
+  //           &.numRank {
+  //             float: right;
+  //             font-weight: 600;
+  //             min-width: 23px;
+  //             text-align: left;
+  //             width: auto;
+
+  //             span {
+  //               font-size: 100%;
+
+  //               &.ordinal {
+  //                 font-size: 50%;
+  //                 vertical-align: super;
+  //               }
+  //             }
+  //           }
+  //         }
+  //       }
+
+  //       .topCities .numRank {
+  //         color: #0096d6;
+  //       }
+
+  //       .populated .numRank {
+  //         color: #01b3ad;
+  //       }
+
+  //       .density .numRank {
+  //         color: #e6527a;
+  //       }
+
+  //       .rainSnow .numRank {
+  //         color: #6d5dc9;
+  //       }
+
+  //       .allConditions .numRank {
+  //         color: #ee8722;
+  //       }
+  //     }
+
+  //     .shareContainer {
+  //       padding: 15px 15px 40px;
+
+  //       h2 {
+  //         color: #333333;
+  //         font-family: 'Arial', sans-serif;
+  //         font-size: 11px;
+  //         font-weight: 600;
+  //         line-height: 15px;
+  //         margin-bottom: 6px;
+  //         margin-top: 0;
+  //         overflow: hidden;
+  //         text-overflow: ellipsis;
+  //         white-space: nowrap;
+  //         width: 100%;
+  //       }
+  //     }
+  //   }
+}

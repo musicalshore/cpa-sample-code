@@ -1,0 +1,80 @@
+.container {
+  position: relative;
+
+  .background {
+    fill: none;
+    pointer-events: all;
+  }
+
+
+  .zoom-bar-wrapper {
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    bottom: 38px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: absolute;
+    right: 27px;
+    input[type=range] {
+      width: 4px;
+      height: 150px;
+      transform: rotate(270deg);
+    }
+    .zoom-in,
+    .zoom-out {
+      background: #fff;
+      border: solid 1px #e3e3e3;
+      border-radius: 0px;
+      color: #0096d6;
+      font-size: 16px;
+      padding: 0 3px;
+
+    }
+
+   
+  }
+}
+:global {
+  .feature {
+    fill: #ccc;
+
+    &.active {
+      fill: orange;
+    }
+  }
+
+  .mesh {
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  text,
+  .marker {
+    cursor: pointer;
+  }
+
+  .marker {
+    fill-opacity: 1;
+    stroke-opacity: 1;
+    stroke-width: 1;
+
+
+    &.top-city {
+      fill: rgb(0, 150, 214);
+      stroke: rgb(67, 199, 255);
+    }
+
+    &.density {
+      fill: rgb(230, 82, 122);
+      stroke: rgb(255, 157, 184);
+    }
+
+    &.rain-snow {
+      fill: rgb(109, 93, 201);
+      stroke: rgb(162, 146, 255);
+    }
+  }
+}

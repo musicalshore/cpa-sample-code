@@ -1,0 +1,28 @@
+version: "3"
+services: 
+    client:
+        build: ./client
+        hostname: angular-epf
+        ports:
+            - "3000:3000"
+        environment:
+            - PORT=3000
+            - NODE_ENV=production
+    server:
+        build: ./server
+        hostname: api-epf
+        ports:
+            - "3002:9999"
+        environment:
+            - PORT=9999
+            - NODE_ENV=production
+    mongodb:
+        image: mongo:4.2.5
+        hostname: mongo-epf
+        ports:
+            - "27017:27017"
+    mongo-seed:
+        build: ./import
+        command: ["./wait-for-it.sh", "mongo-epf:27017"]
+        depends_on:
+            - mongodb

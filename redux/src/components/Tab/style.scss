@@ -1,0 +1,87 @@
+.container {
+  // height: 115px;
+  // width: calc(100% / 3);
+  // background-size: 60px;
+  background-position: center 6px;
+  flex: 1 1 100%;
+
+  .title {
+    color: #666;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    margin-top: 63px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  &.top-city,
+  &.density,
+  &.rain-snow {
+    background-color: #f4f4f4;
+    transition: background-color 0.35s ease-out;
+
+    &:hover {
+      background-color: #e1e1e1
+    }
+
+    &.selected,
+    &.selected:hover {
+      background-color: #ffffff;
+    }
+  }
+  &.top-city {
+    background-image: url('./topCities_Gray.png');
+    border-bottom: 7px solid #0096d6;
+
+    &.selected {
+      background-image: url('./topCities_Active.png');
+      // background-color: #ffffff;
+    }
+
+    .bottom-color {
+      background-color: #0096d6;
+    }
+  }
+
+  &.density {
+    background-image: url('./density_Gray.png');
+    border-bottom: 7px solid #e6527a;
+    // background-color: #f4f4f4;
+    // transition: background-color 0.35s ease-out;
+
+    // &:hover {
+    //   background-color: #e1e1e1
+    // }
+
+    &.selected {
+      background-image: url('./density_Active.png');
+      // background-color: #ffffff;
+    }
+
+    .bottom-color {
+      background-color: #e6527a;
+    }
+  }
+
+  &.rain-snow {
+    background-image: url('./rainSnow_Gray.png');
+    border-bottom: 7px solid #6d5dc9;
+    // background-color: #f4f4f4;
+    // transition: background-color 0.35s ease-out;
+
+    // &:hover {
+    //   background-color: #e1e1e1
+    // }
+
+    &.selected {
+      background-image: url('./rainSnow_Active.png');
+      // background-color: #ffffff;
+    }
+
+
+    .bottom-color {
+      background-color: #6d5dc9;
+    }
+  }
+
+}

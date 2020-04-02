@@ -1,0 +1,97 @@
+.container {
+
+  .heading {
+    background-position: 15px 37px;
+    color: #fff;
+    height: 205px;
+    padding-top: 48px;
+    @media(max-width: 980px) {
+      padding: 18px 18px 0 0;
+    }
+
+    &.top-city {
+      background-color: #0096d6;
+      background-image: url('./topCities_Active_white.png');
+    }
+
+    &.density {
+      background-color: #e6527a;
+      background-image: url('./density_Active_white.png');
+    }
+
+    &.rain-snow {
+      background-color: #6d5dc9;
+      background-image: url('./rainSnow_Active_white.png');
+    }
+
+    .year,
+    .title {
+      margin: 0 0 0 70px;
+      width: 150px;
+    }
+
+    .year {
+      font-size: 15px;
+      font-weight: 400;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .byline {
+      color: #ffffff;
+      font-size: 12px;
+      line-height: 18px;
+      margin-top: 0;
+      padding-left: 37px;
+      padding-right: 22px;
+      padding-top: 10px;
+    }
+  }
+
+  .year-selector {
+    font-size: 15px;
+    line-height: 36px;
+    padding: 0 10px 0 30px;
+
+    select {
+      border-radius: 4px;
+      color: #333;
+      font-weight: 100;
+      height: 36px;
+      width: 100px;
+    }
+  }
+}
+
+
+
+
+
+
+  // .year-selector {
+  //   display: block;
+  //   font-family: 'Arial', sans-serif;
+  //   font-size: 15px;
+  //   line-height: 36px;
+  //   padding: 0 10px 0 30px;
+  // }
+
+  // h4 {
+  //   font-size: 15px;
+  //   margin: 0;
+  // }
+
+  // h3 {
+  //   font-size: 24px;
+  //   margin: 0;
+  // }
+
+  // p {
+  //   font-size: 12px;
+  //   font-weight: normal;
+  // }
+
+
